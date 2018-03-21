@@ -2,15 +2,7 @@ import time
 import telepot
 from telepot.loop import MessageLoop
 import random
-
-# Keywords:
-SAUFEN = ['SAUFEN', 'saufen', 'Saufen', 'BALLERN', 'Ballern', 'ballern', 'TRINKEN', 'trinken', 'Trinken']
-BIER = ['Bier', 'bier', 'BIER']
-
-# Answers:
-ANSW_SAUFEN = ['JAMAN, richtig was installieren!', 'Ich will BALLERN!', 'Morgens, mittags, abends ich will saufen!']
-ANSW_BIER = ['Hab ich da eben Bier gehört?', 'Ja geil, schön rein in den Schlund!', 'Bier ist eben ein Grundnahrungsmittel.']
-SMILEYS = ['Hübscher Smiley..', 'Ich hasse diese Sticker!', 'Hört doch endlich mal auf mit diesen Stickern!!!11!!']
+from keywords import *
 
 def handle(msg):
 	# Read information of user writing.
@@ -25,6 +17,10 @@ def handle(msg):
 
     elif content_type == 'sticker':
         bot.sendMessage(chat_id, random.choice(SMILEYS))
+
+    elif content_type == 'text' and any(keyword in msg['text'] for keyword in VEGAN):
+        bot.sendMessage(chat_id, ANSW_VEGAN)
+
 
 # To get your own token, contact @BotMaster in Telegram.
 with open('token.txt') as f:
