@@ -21,6 +21,14 @@ def handle(msg):
     elif content_type == 'text' and any(keyword in msg['text'] for keyword in VEGAN):
         bot.sendMessage(chat_id, ANSW_VEGAN)
 
+    elif content_type == 'photo' or content_type == 'video':
+        bot.sendMessage(chat_id, 'Das ist doch ein Porno!')
+
+    elif content_type == 'text' and any(keyword in msg['text'] for keyword in NAME):
+        bot.sendMessage(chat_id, random.choice(ANSW_NAME))
+
+    elif content_type == 'text' and any(keyword in msg['text'] for keyword in WASGEHT):
+        bot.sendMessage(chat_id, ANSW_WASGEHT)
 
 # To get your own token, contact @BotMaster in Telegram.
 with open('token.txt') as f:
