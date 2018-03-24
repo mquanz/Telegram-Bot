@@ -5,10 +5,11 @@ import random
 from keywords import *
         
 def handle(msg):
-    # Read information of user writing.
+    # Read information of incoming message.
     content_type, chat_type, chat_id = telepot.glance(msg)
     print(content_type, chat_type, chat_id)
-    
+
+    # Iterate over keywords and possible answers.
     for keywords in DATA:
         if content_type == 'text' and any(keyword in msg['text'].lower() for keyword in keywords):
             bot.sendMessage(chat_id, random.choice(DATA[keywords]))
