@@ -1,9 +1,9 @@
 # Keywords:
-SAUFEN = ['SAUFEN', 'saufen', 'Saufen', 'BALLERN', 'Ballern', 'ballern', 'TRINKEN', 'trinken', 'Trinken', 'alkohol', 'Alkohol']
-BIER = ['Bier', 'bier', 'BIER']
-VEGAN = ['vegetari', 'Vegetari', 'vegan', 'Vegan']
-NAME = ['RICHARD', 'richard', 'Richard']
-WASGEHT = ['was geht','Was geht']
+SAUFEN = ['saufen', 'ballern', 'trinken', 'alkohol']
+BIER = ['bier']
+VEGAN = ['vegetari', 'vegan']
+NAME = ['richard']
+WASGEHT = ['was geht']
 
 # Answers:
 ANSW_SAUFEN = ['JAMAN, richtig was installieren!', 'Ich will BALLERN!', 'Morgens, mittags, abends ich will saufen!']
